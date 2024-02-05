@@ -5,47 +5,57 @@ import {
   Image,
   ScrollView,
   StyleSheet,
-  TouchableOpacity,
+  // Pressable,
+  Pressable,
   StatusBar,
   Card,
 } from "react-native";
 import Logo from "../assets/imgs/jucar.jpg";
 
 const Productos = () => {
-  return (
-    <ScrollView>
-      <View style={styles.container}>
-        <View style={styles.navbar}>
-          <Image source={Logo} style={styles.logo} />
-          <Text style={styles.title}>AUTOPARTES JUCAR SAS</Text>
-        </View>
-        <View>
-          <Text style={styles.title}> {"\n"} PRODUCTOS</Text>
 
-          <TouchableOpacity
-            style={styles.botones}
-            onPress={() => navigation.navigate("Categorias")}
-          >
-            <Text style={styles.botonesText}>Categorias</Text>
-          </TouchableOpacity>
+    return (
+        <ScrollView>
 
-          <TouchableOpacity
-            style={styles.botones}
-            onPress={() => navigation.navigate("Autopartes")}
-          >
-            <Text style={styles.botonesText}>Autopartes</Text>
-          </TouchableOpacity>
+            <View style={styles.container}>
 
-          <TouchableOpacity
-            style={styles.botones}
-            onPress={() => navigation.navigate("MateriasPrima")}
-          >
-            <Text style={styles.botonesText}>Materias Prima</Text>
-          </TouchableOpacity>
-        </View>
-      </View>
-    </ScrollView>
-  );
+                <View style={styles.navbar}>
+
+                    <Image source={Logo} style={styles.logo} />
+
+                    <Text style={styles.title}>AUTOPARTES JUCAR SAS</Text>
+
+                </View>
+
+                <View>
+
+                    <Text style={styles.title}> {"\n"} PRODUCTOS</Text>
+
+                    <Pressable style={styles.botones} onPress={() => navigation.navigate("Categorias")}>
+
+                        <Text style={styles.botonesText}>Categorias</Text>
+
+                    </Pressable>
+
+                    <Pressable style={styles.botones} onPress={() => navigation.navigate("Autopartes")}>
+
+                        <Text style={styles.botonesText}>Autopartes</Text>
+
+                    </Pressable>
+
+                    <Pressable style={styles.botones} onPress={() => navigation.navigate("MateriasPrima")}>
+
+                        <Text style={styles.botonesText}>Materias Prima</Text>
+
+                    </Pressable>
+                    
+                </View>
+
+            </View>
+
+        </ScrollView>
+    );
+
 };
 
 const styles = StyleSheet.create({
